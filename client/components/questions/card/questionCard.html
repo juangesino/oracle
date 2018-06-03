@@ -1,0 +1,26 @@
+<template name="questionCard">
+  <div class="panel panel-white panel-shadow" style="cursor: pointer;">
+    <div class="panel-heading">
+      <img src="{{getImage this}}" class="profile-image img-circle"> {{getUserName this}} asked a question
+      {{#if isOwnCard}}
+        <p class="float-right"><a href="#" class="" id="deleteQuestion"><i class="fa fa-trash"></i></a></p>
+      {{else}}
+        {{#if isFollowing}}
+          <p class="float-right"><a href="#" class="btn-outline" id="followQuestion">UNFOLLOW</a></p>
+        {{else}}
+          <p class="float-right"><a href="#" class="btn-outline" id="followQuestion">FOLLOW</a></p>
+        {{/if}}
+      {{/if}}
+    </div>
+    <div class="panel-body">
+      <h3 class="question-title">{{this.title}}</h3>
+      <em>{{getDate this}}</em>
+      {{#if this.description}}
+        <br><br>
+        <p>{{this.description}}</p>
+      {{/if}}
+      <br><br>
+      <p>{{getAnswersCount}} answers</p>
+    </div>
+  </div>
+</template>

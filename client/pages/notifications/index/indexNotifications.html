@@ -1,0 +1,25 @@
+<template name="indexNotifications">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-white panel-shadow">
+        <div class="panel-heading">
+          All Notifications
+          <p class="pull-right"><a href="#" id="markAllAsRead">Mark all as read</a></p>
+        </div>
+        <div class="panel-body">
+          {{#each notifications}}
+            {{> notificationCard}}
+          {{/each}}
+          {{#if isEmpty notifications}}
+            <br>
+            <hr>
+            <p style="text-align: center">No notifications yet.</p>
+            <hr>
+            <br>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+</template>

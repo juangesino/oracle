@@ -1,0 +1,16 @@
+<template name="answerCard">
+  <div class="panel panel-white panel-shadow">
+    <div class="panel-heading">
+      <img src="{{getImage this}}" class="profile-image img-circle"> {{getUserName this}} submitted an answer
+      {{#if isOwnCard}}
+        <p class="float-right"><a href="#" class="" id="deleteAnswer"><i class="fa fa-trash"></i></a></p>
+      {{/if}}
+    </div>
+    <div class="panel-body">
+      <p>{{this.text}}</p>
+      <em class="float-right">{{getDate this}}</em>
+      <br><br>
+      <a href="#" data-vote-value="1" class="js-answer-vote btn {{getVoteButtonClass 1}}"><i class="fa fa-thumbs-up"></i> UPVOTE ({{getVotes 1}})</a> <a href="#" data-vote-value="-1" class="js-answer-vote btn {{getVoteButtonClass -1}}"><i class="fa fa-thumbs-down"></i> DOWNVOTE ({{getVotes -1}})</a>
+    </div>
+  </div>
+</template>

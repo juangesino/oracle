@@ -1,0 +1,9 @@
+<template name="notificationCard">
+
+  <div>
+    <strong class="js-mark-as-read"><i class="fa fa-circle-o text-info {{isReadClass}}"></i><a href="{{getNotificationPath}}" class="reset"> {{getUserName}} {{getActionText}}</a></strong>
+    <p class="float-right {{isReadClass}}"><a href="#" class="js-mark-as-read"><i class="fa fa-check"></i></a></p>
+    <hr>
+  </div>
+
+</template>

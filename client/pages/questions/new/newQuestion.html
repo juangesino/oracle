@@ -1,0 +1,28 @@
+<template name="newQuestion">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-white panel-shadow">
+        <div class="panel-body">
+          <h3 class="question-title">New Question</h3>
+          <br><br>
+          <form id="newQuestionForm">
+            <div class="alert alert-dismissible alert-danger" id="newQuestionTitleAlert" style="display: none;">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              <span>Every question needs a title. Please fill the form and try again.</span>
+            </div>
+            <div class="form-group" id="newQuestionTitle">
+              <label for="title">Title <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="title" placeholder="Why is the earth round?" autocomplete="off">
+            </div>
+            <div class="form-group">
+              <label for="description">Description</label>
+              <textarea style="resize: none;" class="form-control" rows="5" name="description"></textarea>
+            </div>
+            <br><br>
+            <button type="submit" class="btn btn-accent float-right">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

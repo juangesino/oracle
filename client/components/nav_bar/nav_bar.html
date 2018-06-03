@@ -1,0 +1,38 @@
+<template name="navBar">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/"><img alt="Pixly" src="/assets/images/icon.png" width="40"></a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="{{getClass home_path}}"><a href="/">HOME</a></li>
+          <li class="{{getClass answer_path}}"><a href="{{answer_path}}">EXPLORE</a></li>
+          <li class="{{getClass ask_path}}"><a href="{{ask_path}}">MY QUESTIONS</a></li>
+          <li class="{{getClass following_path}}"><a href="{{following_path}}">FOLLOWING</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          {{#if currentUser}}
+          <li class="{{getClass notifications_path}}"><a href="{{notifications_path}}"><i class="fa fa-bell-o"></i> <span class="label label-danger label-badge {{getNotificationClass}}">{{getNotificationCount}}</span></a></li>
+          <li class="dropdown">
+            <a href="bootstrap-elements.html" data-target="#" class="dropdown-toggle profile-image-holder" data-toggle="dropdown"><img src="{{profile_image}}" class="profile-image img-circle"> {{user_name}}
+              <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="/logout">LOG OUT</a></li>
+            </ul>
+          </li>
+          {{else}}
+            <li><a href="/login">LOG IN</a></li>
+          {{/if}}
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+</template>

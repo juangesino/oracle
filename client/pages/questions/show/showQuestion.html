@@ -1,0 +1,53 @@
+<template name="showQuestion">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-white panel-shadow">
+        <div class="panel-body">
+          <h3 class="question-title">{{question.title}}</h3>
+          <em>{{getDate question}}</em>
+          <br><br>
+          <p>{{question.description}}</p>
+          <p class="float-right"><img src="{{getImage question}}" class="profile-image img-circle"> {{getUserName question}}</p>
+          {{#if isFollowing question}}
+            <p class=""><br><a href="#" class="btn-outline" id="followQuestion">UNFOLLOW</a></p>
+          {{else}}
+            <p class=""><br><a href="#" class="btn-outline" id="followQuestion">FOLLOW</a></p>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-white panel-shadow">
+        <div class="panel-heading">
+          Submit an answer
+        </div>
+        <div class="panel-body">
+          <form id="newAnswerForm">
+            <div class="alert alert-dismissible alert-danger" id="newAnswerTextAlert" style="display: none;">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              <span>Please fill an answer and try again.</span>
+            </div>
+            <div class="form-group" id="newAnswerText">
+              <label for="text">Your answer <span class="text-danger">*</span></label>
+              <textarea style="resize: none;" class="form-control" rows="5" name="text"></textarea>
+            </div>
+            <br><br>
+            <button type="submit" class="btn btn-accent float-right">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      {{#each answers}}
+        {{> answerCard}}
+      {{/each}}
+    </div>
+  </div>
+
+</template>

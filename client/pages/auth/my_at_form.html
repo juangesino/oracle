@@ -1,0 +1,14 @@
+<template name="myAtForm">
+  {{#unless hide}}
+    <div class="at-form">
+      {{#if showTitle}}
+        <p align='center'><img width="100" src='/assets/images/icon.png'/></p>
+        <h3>Oracle</h3>
+      {{/if}}
+      <br><br>
+      {{#if showOauthServices}}
+        {{> atOauth}}
+      {{/if}}
+    </div>
+  {{/unless}}
+</template>

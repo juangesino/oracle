@@ -1,0 +1,27 @@
+<template name="answer">
+  <div class="row">
+    <div class="col-md-12">
+      {{#each questions}}
+        {{> questionCard}}
+      {{/each}}
+    </div>
+    <div class="col-md-12">
+      {{#if isEmpty questions}}
+        <div class="panel panel-white panel-shadow">
+          <div class="panel-body text-center">
+            <h3 class="question-title">No questions published yet</h3>
+            <hr>
+            <br>
+            <h4>Start asking your own</h4>
+            <br>
+            <a href="{{newQuestionPath}}" class="btn btn-accent">ADD NEW QUESTION</a>
+            <br><br>
+          </div>
+        </div>
+      {{/if}}
+    </div>
+  </div>
+
+  <a href="{{newQuestionPath}}" class="btn btn-accent btn-fab btn-float"><span class="fa fa-plus"></span></a>
+
+</template>

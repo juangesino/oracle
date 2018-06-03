@@ -1,0 +1,25 @@
+<template name="following">
+  <div class="row">
+    <div class="col-md-12">
+      {{#each questions}}
+        {{> questionCard}}
+      {{/each}}
+    </div>
+    <div class="col-md-12">
+      {{#if isEmpty questions}}
+        <div class="panel panel-white panel-shadow">
+          <div class="panel-body text-center">
+            <h3 class="question-title">You are not following any questions yet</h3>
+            <hr>
+            <br>
+            <h4>Go ahead and find some interesting quesitions to follow.</h4>
+            <br>
+            <a href="{{explorePath}}" class="btn btn-accent">EXPLORE</a>
+            <br><br>
+          </div>
+        </div>
+      {{/if}}
+    </div>
+  </div>
+
+</template>
